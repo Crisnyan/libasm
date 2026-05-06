@@ -8,16 +8,22 @@ int main() {
 	char *s2 = "HOL";
 	char *s3 = "HOLO";
 	char *s4 = "HOLAA";
+	char *s5 = "";
 
 	printf("MINE\n");
 	printf("Same: %d\n", ft_strcmp(s1,s1));
 	printf("s2 shorter: %d\n", ft_strcmp(s1,s2));
 	printf("s2 longer: %d\n", ft_strcmp(s1,s3));
 	printf("Last letter different: %d\n", ft_strcmp(s1,s4));
+	printf("Emtpy string: %d\n", ft_strcmp(s5,s1));
+	printf("Emtpy string reverse: %d\n", ft_strcmp(s1,s5));
 
 	printf("OG\n");
 	printf("Same: %d\n", strcmp(s1,s1));
 	printf("s2 shorter: %d\n", strcmp(s1,s2));
 	printf("s2 longer: %d\n", strcmp(s1,s3));
 	printf("Last letter different: %d\n", strcmp(s1,s4));
+	printf("Emtpy string: %d\n", strcmp(s5,s1));
+	printf("Emtpy string reverse: %d\n", strcmp(s1,s5));
+	return 0;
 }

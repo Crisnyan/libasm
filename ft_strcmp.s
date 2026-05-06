@@ -4,7 +4,8 @@ global ft_strcmp
 ft_strcmp: ; rdi es s1, rsi es s2
 	push rbp
 	mov rbp, rsp
-	mov bh, 0
+	mov ch, 0
+	mov cl, 0
 	cmp rdi, 0
 	je .end
 	cmp rsi, 0
@@ -13,20 +14,20 @@ ft_strcmp: ; rdi es s1, rsi es s2
 	jmp .loop
 	
 .loop:
-	mov bl, byte [rdi + rax] ; bl almacena char de s1
-	mov bh, byte [rsi + rax] ; bh almacena char de s2
-	cmp bl, bh
+	mov cl, byte [rdi + rax] ; cl almacena char de s1
+	mov ch, byte [rsi + rax] ; ch almacena char de s2
+	cmp cl, ch
 	jne .set_retval
-	cmp bl, 0
+	cmp cl, 0
 	je .end
 	inc rax
 	jmp .loop
 
 .set_retval:
-	sub bl, bh ; bl pasa a almacenar s1 - s2
+	sub cl, ch ; cl pasa a almacenar s1 - s2
 	jmp .end
 
 .end:
-	movsx rax, bl
+	movsx rax, cl
 	leave
 	ret
